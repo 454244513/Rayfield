@@ -3199,8 +3199,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle.Switch.UIStroke, TweenInfo.new(0.55, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Color = SelectedTheme.ToggleDisabledOuterStroke}):Play()
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()	
-					if getgenv().FuncDisplayAddKeybind then
-						getgenv().FuncDisplayAddKeybind(ToggleSettings.Name)
+					if ToggleSettings.FuncDisplay and getgenv().FuncDisplayRemoveKeybind then
+						getgenv().FuncDisplayRemoveKeybind(ToggleSettings.Name)
 					end
 				else
 					ToggleSettings.CurrentValue = true
@@ -3212,8 +3212,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle.Switch.UIStroke, TweenInfo.new(0.55, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Color = SelectedTheme.ToggleEnabledOuterStroke}):Play()
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()		
-					if getgenv().FuncDisplayRemoveKeybind then
-						getgenv().FuncDisplayRemoveKeybind(ToggleSettings.Name)
+					if ToggleSettings.FuncDisplay and getgenv().FuncDisplayAddKeybind then
+						getgenv().FuncDisplayAddKeybind(ToggleSettings.Name)
 					end
 				end
 
